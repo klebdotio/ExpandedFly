@@ -3,7 +3,7 @@ on join:
         set player's flight mode to true
         send "&3&l[&r&bExpandedFly&3&l]&r Flying auto enabled on join"
 
-command /fa:
+command /f:
         permission: expandedfly.fly
         permission message: &c&l[&r&cExpandedFly&c&l]&r&c You are lacking the permission node: &4expandedfly.fly
         trigger:
@@ -15,22 +15,23 @@ command /fa:
                                 set player's flight mode to true
                                 send "&3&l[&r&bExpandedFly&3&l]&r Flying is now enabled for %player%"
                         else:
-                                send "&3&l[&r&bExpandedFly&3&l]&r Flying is already enabled for %player%"
-
-
-command /fd:
-        permission: expandedfly.fly.disable
-        permission message: &c&l[&r&cExpandedFly&c&l]&r&c You are lacking the permission node: &4expandedfly.fly.disable
-        trigger:
-                if command sender is console:
-                        send "&3&l[&r&bExpandedFly&3&l]&r This command can only be executed by players."
-                if command sender is player:
-                        if {flight::%player's uuid%} is set:
-                                delete {flight::%player's uuid%}
                                 set player's flight mode to false
+                                delete {flight::%player's uuid%}
                                 send "&3&l[&r&bExpandedFly&3&l]&r Flying is now disabled for %player%"
-                        else:
-                                send "&3&l[&r&bExpandedFly&3&l]&r Flying is not enabled for %player%"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
