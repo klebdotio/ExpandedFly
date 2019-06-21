@@ -1,7 +1,8 @@
 on join:
-        set {flight::%player's uuid%} to true
-        set player's flight mode to true
-        send "&3&l[&r&bExpandedFly&3&l]&r Flying auto enabled on join"
+        if {flight::%player's uuid%} is not set:
+                set {flight::%player's uuid%} to true
+                set player's flight mode to true
+                send "&3&l[&r&bExpandedFly&3&l]&r Flying auto enabled on join"
 
 command /f:
         permission: expandedfly.fly
@@ -18,6 +19,16 @@ command /f:
                                 set player's flight mode to false
                                 delete {flight::%player's uuid%}
                                 send "&3&l[&r&bExpandedFly&3&l]&r Flying is now disabled for %player%"
+
+on disconnect:
+        delete {flight::%player's uuid%}
+
+
+
+
+
+
+
 
 
 
