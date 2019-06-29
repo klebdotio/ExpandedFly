@@ -21,7 +21,7 @@ public final class ExpandedFly extends JavaPlugin implements Listener {
         public void onPlayerJoin(PlayerJoinEvent event)
     {
             String p = event.getPlayer().getName();
-        getServer().dispatchCommand(getServer().getConsoleSender(),"fly enable" + p);
+        getServer().dispatchCommand(getServer().getConsoleSender(),"sudo" + p + "fly enable);
         TextComponent b0 = new TextComponent("[");
         b0.setColor(ChatColor.DARK_AQUA);
         b0.setColor(ChatColor.BOLD);
